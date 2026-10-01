@@ -31,3 +31,6 @@ pnpm-debug.log*
 
 # vercel
 .vercel
+
+# internal agent work files (plans, reviews, logs)
+.agents/

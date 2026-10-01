@@ -1,0 +1,101 @@
+/* Scan only src/ for class names (keeps docs under .agents/ and database/ out of the candidate scan). */
+@import "tailwindcss" source("../");
+@import "tw-animate-css";
+
+/* Design tokens — "Modern Indonesian Village" (design D12). shadcn variable names are kept. */
+:root {
+  --background: #FAF7F0;          /* warm off-white */
+  --foreground: #23262B;          /* dark charcoal (15.0:1 on background) */
+  --card: #FFFFFF;
+  --card-foreground: #23262B;
+  --popover: #FFFFFF;
+  --popover-foreground: #23262B;
+  --primary: #1F5135;             /* deep green (9.4:1 vs white) */
+  --primary-foreground: #FFFFFF;
+  --secondary: #DCEFD9;           /* light green surface */
+  --secondary-foreground: #1A3D28;
+  --accent: #E9B44C;              /* natural yellow — fills/badges only; text on it = charcoal */
+  --accent-foreground: #23262B;
+  --accent-strong: #A6500B;       /* natural orange for text/icons (>=4.5:1 on background) */
+  --muted: #EFEAE0;
+  --muted-foreground: #565C63;
+  --border: #E2DCCF;
+  --input: #D6CFC0;
+  --ring: #1F5135;
+  --destructive: #B42318;
+  --destructive-foreground: #FFFFFF;
+  --success: #2F7D4A;
+  --chart-1: #1F5135;
+  --chart-2: #5FA36B;
+  --chart-3: #E9B44C;
+  --chart-4: #A6500B;
+  --chart-5: #5E6B7D;
+  --radius: 0.875rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-strong: var(--accent-strong);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-jakarta);
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    font-size: 16px;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading), var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
